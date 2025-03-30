@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  app:
+    container_name: golang-project
+    build:
+      context: .
+      dockerfile: dockerfile
+    ports:
+      - "1011:1011"
+    env_file:
+      - .env
+    restart: unless-stopped
